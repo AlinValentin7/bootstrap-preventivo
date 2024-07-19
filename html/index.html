@@ -10,8 +10,9 @@
 </head>
 <body>
     <header>
+        <!-- navbar -->
         <nav class="navbar navbar-expand-md bg-black" data-bs-theme="dark">
-            <div class="container-fluid" >
+            <div class="container" >
                 <a class="navbar-brand" href="#">Bool Factory</a>
                 <button class="navbar-toggler" type="button" 
                     data-bs-toggle="collapse"data-bs-target="#navbarSupportedContent" 
@@ -36,41 +37,112 @@
             </div>
         </nav>
     </header>
+
     <section>
-        <div class="container">
+        <div class="container py-5">
             <div class="row">
-                <div class="col-lg-8">
-                    <form>
-                        <div class="mb-3">
-                          <label for="exampleInputEmail1" class="form-label">Email address</label>
-                          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                          <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-                        </div>
-                        <div class="mb-3">
-                          <label for="exampleInputPassword1" class="form-label">Password</label>
-                          <input type="password" class="form-control" id="exampleInputPassword1">
-                        </div>
-                        <div class="mb-3 form-check">
-                          <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                          <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                      </form>
-                </div>
-                <div class="col-lg-4">
-                    <div class="card" style="width: 18rem;">
-                        <img src="..." class="card-img-top" alt="...">
-                        <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
-                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                          <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                      </div>
+                <div class="col">
+                    <h1>Richiesta Preventivo</h1>
+                    <p>Compila il form per richiedere un preventivo per i nostri servizi di sviluppo.</p>
                 </div>
             </div>
-            
         </div>
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-lg-8">
+                    <form class="row " action="#" method="post" id="preventivo">
+                        <div  class="col-12 mb-3">
+                            <label for="nome" class="form-label">Nome</label>
+                            <input type="text" class="form-control" id="nome" name="nome" minlength="3"  maxlength="20" required>
+
+                        </div>
+
+                        <div class="col-12 mb-3">
+                            <label for="cognome" class="form-label">Cognome</label>
+                            <input type="text" class="form-control" id="cognome" name="cognome" minlength="3" maxlength="20" required>
+                        </div>
+                        
+                        <div class="col-12 mb-3">
+                          <label for="email" class="form-label">Email</label>
+                          <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+
+                        <div class="col-12 mb-3">
+                            <label for="lavoro" class="form-label">Tipo di lavoro</label>
+                            <select id="lavoro" name="lavoro" class="form-select" required>
+                              <option selected value="">--Scegli il tipo di lavoro-- </option>
+                              <option value="backend">Backend Development</option>
+                              <option value="frontend">Frontend Development</option>
+                              <option value="project">Project Analysis</option>
+                            </select>
+                        </div>
+                       
+                        <div class="col-12 mb-3" class="texarea">
+                            <label for="commento" class="form-label">Textarea con Bootstrap 5</label>
+                            <textarea class="form-control"  id="commento" style="height: 100px"></textarea>
+                        </div>
+
+                        <div class="col-12 mb-3">
+                            <label for="promo" class="form-label">Codice Promozionale (opzionale)</label>
+                            <input type="text" class="form-control" id="promo" name="promo">
+                        </div>
+                        <input type="text" class="form-control " id="promo" >
+                        <div class="valid-feedback">
+                        Il codice inserito è valido!
+                        </div>
+                        <div class="invalid-feedback">
+                        Il codice inserito non è valido!
+                        </div>
+                        
+                        <div class="col-12 mb-3 form-check">
+                          <input type="checkbox" class="form-check-input" id="privacy-policy" required>
+                          <label class="form-check-label" for="privacy-policy">Accetto la Privacy Policy</label>
+                        </div>
+                        <div class="col-lg-6 d-flex justify-content-around">
+                            <button type="submit" class="btn btn-primary align-self-baseline">
+                                Calcola preventivo
+                            </button>
+                        </div>
+                        <div class="col-lg-6 d-flex justify-content-center d-none" id="final-price-container">
+                            <span class="align-self-center">
+                              <span class="fs-6 fw-bold d-block align-self-baseline">Prezzo finale</span>
+                              <span class="fw-bold fs-5" id="units">€ 200</span><span class="text-body-tertiary"
+                                    id="digits">,00</span>
+                            </span>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-12 col-lg-3">
+                    <div class="card">
+                      <img class="card-img-top" src="https://picsum.photos/300/200" alt="placeholder">
+                      <div class="card-body">
+                        <h5 class="card-title">
+                          I nostri contatti
+                        </h5>
+                        <p class="mb-0">Se hai bisogno di aiuto puoi contattarci:</p>
+                      </div>
+                      <ul class="list-group list-group-flush">
+                        <li class="list-group-item">help@boolfactory.test</li>
+                        <li class="list-group-item">+1122334455</li>
+                        <li class="list-group-item"><a href="#" class="card-link">Help Desk</a></li>
+                      </ul>
+                    </div>
+                </div>
+                 
+            </div>
+        </div>
+            
+        
     </section>
+    <footer class="bg-dark text-white">
+        <div class="container d-flex justify-content-center">
+          <div class="row p-4">
+            <div class="col">
+              &copy; 2024 - Tutti i diritti riservati
+            </div>
+          </div>
+        </div>
+      </footer>
 
 
 
