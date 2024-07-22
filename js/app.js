@@ -9,7 +9,7 @@
     // Ottiene l'elemento che mostra il feedback per un codice promozionale valido
     const invalidFeedbackElement = document.querySelector('.invalid-feedback');
     // Ottiene l'elemento che mostra il feedback per un codice promozionale non valido
-    // const decimalsElement = document.querySelector('.price-decimals');
+    const decimaleElement = document.querySelector('decimale');
 
     const prezzo = {
         backend: 20.50,
@@ -58,9 +58,13 @@
             invalidFeedbackElement.style.display = 'none';
             // Se non è stato inserito alcun codice promozionale, nasconde entrambi i feedback
         }
-        const [intero] = prezzoFinale.toFixed(2).split('.');
-         unitsElement.textContent = intero;
+          // Formatta il prezzo con due cifre decimali e lo divide in parte intera e decimale
+          const [intero, decimali] = prezzoFinale.toFixed(2).split('.');
+          // Assegna la parte intera al contenuto di unitsElement
+          unitsElement.textContent = intero;
+          // Assegna la parte decimale al contenuto di decimalsElement
+          decimaleElement.textContent = `,${decimali}`;
         
-        // Aggiorna il contenuto dell'elemento che mostra il prezzo finale, 
+        
     });
 
